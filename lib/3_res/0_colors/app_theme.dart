@@ -4,8 +4,12 @@ class AppTheme {
 
   static ThemeData dark(){
 
-    Color mainColor = const Color(0xFF00001E);
+    // Color mainColor = const Color(0xFF00001E);
+    // Color subColor = const Color(0xFFFAFFFF);
+    Color mainColor = const Color(0xFFFFB400);
     Color subColor = const Color(0xFFFAFFFF);
+    Color textColor = const Color(0xFF000000);
+    Color textboxColor = const Color(0xFFFFFFC8);
 
     return ThemeData(
       // primaryColorBrightness: Brightness.dark,
@@ -14,8 +18,8 @@ class AppTheme {
       backgroundColor: mainColor,
       dialogBackgroundColor: mainColor,
       brightness: Brightness.dark,
-
     );
+
   }
 
 }
