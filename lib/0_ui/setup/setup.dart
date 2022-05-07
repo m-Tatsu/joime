@@ -66,7 +66,9 @@ class Setup extends StatelessWidget{
                 'ログイン',
                 style: TextStyle(
                     fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold
-                ),),)
+                ),
+              ),
+            ),
           ],
         ),
       ),
