@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:joime/0_ui/mypage/mypage.dart';
 
 class Start extends StatelessWidget{
   const Start({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class Start extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
+            SizedBox(
               width: 250,height: 250,
               child: Image.asset('lib/3_res/1_icons/mainlogo.png',
                 fit: BoxFit.contain,),
@@ -30,7 +31,7 @@ class Start extends StatelessWidget{
                   context,
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return FirstProfile();
+                      return const FirstProfile();
                     },
                     fullscreenDialog: false));
             },
@@ -59,6 +60,8 @@ class Start extends StatelessWidget{
 
 //モーダル画面
 class FirstProfile extends StatelessWidget {
+  const FirstProfile({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -180,11 +183,18 @@ class FirstProfile extends StatelessWidget {
                     child: TextButton(
                         // color: const Color(0xFFFFFFC8),
                         onPressed: (){
-                          showDialog(
-                              context: context, builder: (_) => const AlertDialog(
-                                title:Text('Welcome To Joime',textAlign: TextAlign.center,),
-                              )
-                          );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return const Mypage();
+                                  },
+                                  fullscreenDialog: false));
+                          // showDialog(
+                          //     context: context, builder: (_) => const AlertDialog(
+                          //       title:Text('Welcome To Joime',textAlign: TextAlign.center,),
+                          //     )
+                          // );
                         },
                         child: const Text('完了',style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold),),
                     ),
